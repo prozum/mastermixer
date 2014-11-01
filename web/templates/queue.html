@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>Kø</h2>
+{% if not orders %}
+  <li><em>Utroligt.  Ingen drink ordrer lige nu!</em> 
+{% else %}
+<table id="queue">
+    <thead>
+        <tr>
+            <th scope="col">Ordre Id</th>
+            <th scope="col">Drink</th>
+            <th scope="col">Kunde</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order.Id }}</td>
+            <td>{{ products[order.P_Id-1].Title }}</td>
+            <td>{{ order.Client }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %} 
+{% endblock %}

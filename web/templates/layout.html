@@ -1,0 +1,15 @@
+<!doctype html>
+<title>Mastermixer 3001</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<div class=page>
+  <h1>Mastermixer 3001</h1>
+  <div id="metanav">
+      <form action="{{ url_for('root') }}" method=post>
+        <input type=submit value="Tilbage">
+      </form>
+  </div>
+  {% for message in get_flashed_messages() %}
+    <div class=flash>{{ message }}</div>
+  {% endfor %}
+  {% block body %}{% endblock %}
+</div>

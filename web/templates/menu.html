@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>Menu</h2>
+  {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
+  <form action="{{ url_for('order') }}" method=post>
+    <dl>
+      <dd><input type=submit value="Bestil Drink">
+    </dl>
+  </form>
+    <form action="{{ url_for('product') }}" method=post>
+    <dl>
+      <dd><input type=submit value="Tilføj Drinks">
+    </dl>
+  </form>
+    <form action="{{ url_for('queue') }}" method=post>
+    <dl>
+      <dd><input type=submit value="Bestillinger">
+    </dl>
+  </form>
+    <form action="{{ url_for('about') }}" method=post>
+    <dl>
+      <dd><input type=submit value="Om Mastermixer">
+    </dl>
+  </form>
+{% endblock %}

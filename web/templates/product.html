@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>Tilføj drink</h2>
+  {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
+  <form action="{{ url_for('add_product') }}" method=post class=add-entry>
+  <dl>
+    <dt>Titel på drink:
+    <dd><input type=text size=30 name=title>
+    <dt>Info om drink:
+    <dd><textarea name=text rows=5 cols=40></textarea>
+    <dt>Opfyldning af glasset:
+    <dd><input type="range" min=0 max=100 name=stat1>
+    <dt>Andel Whisky:
+    <dd><input type=int size=30 name=stat2>
+    <dt>Andel Cola:
+    <dd><input type=int size=30 name=stat3>
+    <dd><input type=submit value=Bestil>
+  </dl>
+{% endblock %}
