@@ -1,4 +1,3 @@
 mastermixer
 ===========
-
-Web interface and arduino program to control drink mixing machine
+A web interface and arduino program to control a drink mixing machine
